@@ -13,4 +13,12 @@ public class GuessResultTest {
         assertFalse(guessResultFalse.isCorrect()); // returns false
 
     }
+
+    @Test
+    public void getLetterResult_notCaseSensitive() {
+        GuessResult guessResult = new GuessResult("basic", "bAsic");
+        LetterResult[] results = guessResult.getLetterResults();
+
+        assertArrayEquals(new LetterResult[]{LetterResult.GREEN, LetterResult.GREEN, LetterResult.GREEN, LetterResult.GREEN, LetterResult.GREEN}, results);
+    }
 }
