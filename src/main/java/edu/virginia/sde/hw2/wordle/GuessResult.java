@@ -54,7 +54,7 @@ public class GuessResult {
      */
     public boolean isCorrect() {
         //TODO: Stub
-        return false;
+        return guess.equalsIgnoreCase(answer);
     }
 
     /**
