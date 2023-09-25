@@ -53,7 +53,6 @@ public class GuessResult {
      * Returns true if the player's guess matches the answer (case-insensitive)
      */
     public boolean isCorrect() {
-        //TODO: Stub
         return guess.equalsIgnoreCase(answer);
     }
 
@@ -62,8 +61,24 @@ public class GuessResult {
      * function is case-insensitive.
      */
     public LetterResult[] getLetterResults() {
-        //TODO: Stub
-        return null;
+        String guess = this.guess.toLowerCase();
+        String answer = this.answer.toLowerCase();
+        LetterResult[] results = new LetterResult[guess.length()];
+
+        for (int i = 0; i < guess.length(); i++) {
+            char guessChar = guess.charAt(i);
+            char answerChar = answer.charAt(i);
+
+            if (guessChar == answerChar) {
+                results[i] = LetterResult.GREEN;
+            } else if (answer.contains(String.valueOf(guessChar))) {
+                results[i] = LetterResult.YELLOW;
+            } else {
+                results[i] = LetterResult.GRAY;
+            }
+        }
+
+        return results;
     }
 
 
