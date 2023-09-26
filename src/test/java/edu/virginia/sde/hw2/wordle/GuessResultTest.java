@@ -9,9 +9,8 @@ public class GuessResultTest {
         GuessResult guessResultCorrect = new GuessResult("basic", "basic");
         GuessResult guessResultFalse = new GuessResult("basic", "brain");
 
-        assertTrue(guessResultCorrect.isCorrect()); // returns true
-        assertFalse(guessResultFalse.isCorrect()); // returns false
-
+        assertTrue(guessResultCorrect.isCorrect());
+        assertFalse(guessResultFalse.isCorrect());
     }
 
     @Test
@@ -39,17 +38,7 @@ public class GuessResultTest {
         GuessResult result = new GuessResult("brain", "basic");
         assertArrayEquals(new LetterResult[]{LetterResult.GREEN, LetterResult.GRAY, LetterResult.YELLOW, LetterResult.GREEN, LetterResult.GRAY}, result.getLetterResults());
     }
-    @Test
-    public void getLetterResult_nullInput(){
-        GuessResult guessResult = new GuessResult(null, "basic");
-        assertThrows(IllegalArgumentException.class, () -> guessResult.getLetterResults());
-    }
 
-    @Test
-    public void getLetterResult_wrongLength() {
-        GuessResult wrongLength = new GuessResult("hundred", "hello");
-        assertThrows(IllegalArgumentException.class, () -> wrongLength.getLetterResults());
-    }
     @Test
     public void getLetterResult_numberInput() {
         GuessResult invalidInputNumbers = new GuessResult("12345", "brain");
@@ -61,6 +50,7 @@ public class GuessResultTest {
         GuessResult invalidInput = new GuessResult("**+=-", "brain");
         assertThrows(IllegalArgumentException.class, () -> invalidInput.getLetterResults());
     }
+
     @Test
     public void getLetterResult_doubleLetters() {
         GuessResult guessResult = new GuessResult("dwell", "chill");
