@@ -63,6 +63,17 @@ public class GuessResult {
     public LetterResult[] getLetterResults() {
         String guess = this.guess.toLowerCase();
         String answer = this.answer.toLowerCase();
+
+        if (guess == null) {
+            throw new IllegalArgumentException("Guesses cannot be null.");
+        }
+        if (guess.length() != 5) {
+            throw new IllegalArgumentException("Words must be be 5 characters long.");
+        }
+        if (!guess.matches("[a-z]+")) {
+            throw new IllegalArgumentException("Words should only contain letters.");
+        }
+
         LetterResult[] results = new LetterResult[guess.length()];
 
         for (int i = 0; i < guess.length(); i++) {
