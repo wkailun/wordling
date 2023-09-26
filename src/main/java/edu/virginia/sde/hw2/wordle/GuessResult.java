@@ -77,7 +77,6 @@ public class GuessResult {
                 results[i] = LetterResult.GRAY;
             }
         }
-
         return results;
     }
 
