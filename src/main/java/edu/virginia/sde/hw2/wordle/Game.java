@@ -119,8 +119,26 @@ public class Game {
      *                                  it's not a real 5-letter word.
      */
     public GuessResult submitGuess(String guess) {
-        //TODO: Stub
-        return null;
+        if (isGameOver()) {
+            throw new GameAlreadyOverException("Game is already over!");
+        }
+        if (!guessDictionary.contains(guess)) {
+            throw new IllegalWordException(String.format("Invalid guess. %s is not a word in guess dictionary.", guess));
+        }
+
+        GuessResult guessResult = new GuessResult(guess, answer);
+        guessesRemaining--;
+
+        if (guess.equalsIgnoreCase(answer)) {
+            gameStatus = GameStatus.WIN;
+        }
+        else if (getGuessesRemaining() <= 0) {
+            gameStatus = GameStatus.LOSS;
+        }
+        else {
+            gameStatus = GameStatus.PLAYING;
+        }
+        return guessResult;
     }
 
     private static void validate(Dictionary guessDictionary, String answer, int guessesRemaining, GameStatus gameStatus) {
