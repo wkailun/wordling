@@ -83,4 +83,20 @@ class GameTest {
 
         assertEquals(LOSS, game.getGameStatus());
     }
+
+    @Test
+    public void test_submitGuess_notInDictionary() {
+        var game = new Game(defaultGuessesDictionary, "TREND", 4, PLAYING);
+
+        assertThrows(IllegalWordException.class, () -> game.submitGuess("hjklk"));
+    }
+
+    @Test
+    public void test_submitGuess_submitAfterGameEnded() {
+        var gameWIN = new Game(defaultGuessesDictionary, "TREND", 0, WIN);
+        var gameLOSS = new Game(defaultGuessesDictionary, "TREND", 0, LOSS);
+
+        assertThrows(GameAlreadyOverException.class, () -> gameWIN.submitGuess("hello"));
+        assertThrows(GameAlreadyOverException.class, () -> gameLOSS.submitGuess("hello"));
+    }
 }
