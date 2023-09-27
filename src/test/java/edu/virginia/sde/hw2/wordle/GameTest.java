@@ -41,4 +41,19 @@ class GameTest {
         assertEquals(WIN, game.getGameStatus());
         assertTrue(game.isGameOver());
     }
+
+    @Test
+    public void test_submitGuess_decrementCorrectly() {
+        var gameOne = new Game(defaultGuessesDictionary, "TREND", 2, PLAYING);
+        gameOne.submitGuess("TREND");
+        assertEquals(1, gameOne.getGuessesRemaining());
+
+        var gameTwo = new Game(defaultGuessesDictionary, "TREND", 6, PLAYING);
+        gameTwo.submitGuess("TREND");
+        assertEquals(5, gameTwo.getGuessesRemaining());
+
+        var gameThree = new Game(defaultGuessesDictionary, "TREND", 1, PLAYING);
+        gameThree.submitGuess("TREND");
+        assertEquals(0, gameThree.getGuessesRemaining());
+    }
 }
