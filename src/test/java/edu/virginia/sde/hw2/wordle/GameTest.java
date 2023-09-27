@@ -56,4 +56,31 @@ class GameTest {
         gameThree.submitGuess("TREND");
         assertEquals(0, gameThree.getGuessesRemaining());
     }
+
+    @Test
+    public void test_submitGuess_correctGameStatus_PLAYING() {
+        var game = new Game(defaultGuessesDictionary, "TREND", 4, PLAYING);
+        assertEquals(PLAYING, game.getGameStatus());
+    }
+
+    @Test
+    public void test_submitGuess_WIN() {
+        var game = new Game(defaultGuessesDictionary, "TREND", 6, PLAYING);
+        game.submitGuess("TREND");
+
+        assertEquals(WIN, game.getGameStatus());
+    }
+
+    @Test
+    public void test_submitGuess_LOSS() {
+        var game = new Game(defaultGuessesDictionary, "TREND", 6, PLAYING);
+        game.submitGuess("hello");
+        game.submitGuess("apple");
+        game.submitGuess("earth");
+        game.submitGuess("water");
+        game.submitGuess("polar");
+        game.submitGuess("total");
+
+        assertEquals(LOSS, game.getGameStatus());
+    }
 }
