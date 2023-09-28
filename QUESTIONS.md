@@ -8,7 +8,7 @@ Answer these questions thoroughly after completing the assignment, using example
 
 ## Answer
 
-In testing for submitGuess() portion of the assignment. The testings include: 
+The testing for submitGuess() portion of the assignment include: 
 * test_submitGuess_correctGameStatus_PLAYING(), test_submitGuess_WIN(), and test_submitGuess_LOSS(), which are all equivalence partitions,
   are testing if submitGuess() is updating the gameStatus correctly in each different scenarios (WIN, LOSS, PLAYING). 
   *  test_submitGuess_correctGameStatus_PLAYING() (line 61) checks that the status remains to be PLAYING when the user has not given a guess that matches
