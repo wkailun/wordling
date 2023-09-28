@@ -8,7 +8,22 @@ Answer these questions thoroughly after completing the assignment, using example
 
 ## Answer
 
-[Your team answer goes here]
+In testing for submitGuess() portion of the assignment. The testings include: 
+* test_submitGuess_correctGameStatus_PLAYING(), test_submitGuess_WIN(), and test_submitGuess_LOSS(), which are all equivalence partitions,
+  are testing if submitGuess() is updating the gameStatus correctly in each different scenarios (WIN, LOSS, PLAYING). 
+  *  test_submitGuess_correctGameStatus_PLAYING() (line 61) checks that the status remains to be PLAYING when the user has not given a guess that matches
+  the answer and the guessesRemaining does not equal to 0.
+  * test_submitGuess_WIN() (line 67) checks that the gameStatus is WIN when the user has given a guess that matches the 
+  answer
+  * test_submitGuess_LOSS() (line 75) checks that the gameStatus is LOSS by exhausting all 6 of guessesRemaining with guesses that does not 
+  match the answer, leaving guessesRemaining to be 0. 
+* test_submitGuess_decrementCorrectly() (line 46) is a boundary partition that test and checks to see if guessesRemaining was being decremented 
+correctly each time the user inputs a guess. 
+* test_submitGuess_notInDictionary() and test_submitGuess_submitAfterGameEnded() are exception partitions that ensure that the 
+correct exceptions are thrown when the user inserts an invalid input. 
+  * test_submitGuess_notInDictionary() (line 88) checks that IllegalWordException is being thrown when input guess is not a word in the guess dictionary
+  * test_submitGuess_submitAfterGameEnded() (line 95) checks that GameAlreadyOverException is being thrown when the user attempts to input a guess
+    after the game has ended, in either win or lose situations. 
 
 ## Question 2
 
