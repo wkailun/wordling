@@ -2,7 +2,7 @@
 # Homework 2 - Testing
 
 ## Authors
-1) Name, netid, [GitHub profile name]
+1) Cindy, ggm7qk, cindyd02
 2) Name, netid, [GitHub profile name]
 3) Name, netid, [GitHub profile name]
 
@@ -14,11 +14,10 @@
 
 List the primary contributions of each author. It is recommended to update this with your contributions after each coding session.:
 
-### [Author 1 - replace this with their name]
+### [Author 1 - Cindy Dong]
 
-* Author 1 contributions
-* as a bulleted list
-* each line starts with an asterisk and a space
+* Wrote test cases for WordValidatorTest and DictionaryTest 
+* Debugged the code in the WordValidator class to pass the test cases
 
 ### [Author 2 - replace this with their name]
 
