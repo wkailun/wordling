@@ -16,4 +16,8 @@ The function submitGuess(String) in WordleGameState can throw two different Exce
 
 ## Answer
 
-[Your team answer goes here]
+Developers intentionally design program to throw Exceptions as it is an essential part of handling errors. 
+It allows developers to separate error handling code from the main code. This separation can make the 
+code cleaner and more maintainable, and they can focus on writing code to handle specific errors in one place. 
+Furthermore, by throwing exceptions when specific error conditions are met, developers can understand that something unexpected
+has happened. This could help debug and handle errors better.
