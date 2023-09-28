@@ -3,12 +3,11 @@
 
 ## Authors
 1) Cindy, ggm7qk, cindyd02
-2) Name, netid, [GitHub profile name]
-3) Name, netid, [GitHub profile name]
+2) Karen Wang, vxd4qa, wkailun
 
 ## To Run
 
-[Add a brief description of how to build and run your .jar file based on this code]
+Run ./gradlew build in the terminal to create the .jar file. Test cases can be found in their designated test files. The game Wordle can be played in PlayWordle.java. 
 
 ## Contributions
 
@@ -19,17 +18,12 @@ List the primary contributions of each author. It is recommended to update this 
 * Wrote test cases for WordValidatorTest and DictionaryTest 
 * Debugged the code in the WordValidator class to pass the test cases
 
-### [Author 2 - replace this with their name]
+### Karen Wang
 
-* Author 2 contributions
-* as a bulleted list
-* each line starts with an asterisk and a space
-
-### [Author 3 - replace this with their name]
-
-* Author 3 contributions
-* as a bulleted list
-* each line starts with an asterisk and a space
+* Implemented isCorrect() and getLetterResults() in GuessResult.java 
+* Wrote and passed test cases for isCorrect() and getLetterResults()
+* Implemented submitGuess() in Game.java 
+* Wrote and passed test cases submitGuess()
 
 ## Issues
 
