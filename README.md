@@ -18,7 +18,7 @@ List the primary contributions of each author. It is recommended to update this 
 * Wrote test cases for WordValidatorTest and DictionaryTest 
 * Debugged the code in the WordValidator class to pass the test cases
 
-### Karen Wang
+### [Author 2 - Karen Wang]
 
 * Implemented isCorrect() and getLetterResults() in GuessResult.java 
 * Wrote and passed test cases for isCorrect() and getLetterResults()
